@@ -1,0 +1,28 @@
+table{
+    border: 1px;
+    border-style: solid;
+    background-color: rgba(0, 0, 0, 0.082);
+
+}
+
+tbody{
+    margin: 1em;
+}
+
+.center {
+    text-align: center;
+}
+
+.forma-del {
+    margin: 10px;
+}
+
+input.form-control{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width : 50%;
+}
+
+#info.table td:first-child{
+    width: min-content;
+}

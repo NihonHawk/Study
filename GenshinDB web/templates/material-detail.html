@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+Material - {{ material[0] }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <h1>{{ material[0] }} - {{ material[4] }}</h1>
+    <div class="alert alert-info">
+        <p>Тип : {{ material[1] }}</p>
+        <p>Получение : {{ material[3] }}</p>
+        <p>Описание : </p>
+        <p style="text-align:justify">{{ material[2] }}</p>
+    </div>
+    <a href="/materials/{{ material[0] }}/del" class="btn btn-danger">Удалить</a>
+    <a href="/materials/{{ material[0] }}/update" class="btn btn-warning">Обновить</a>
+</div>
+{% endblock %}
+

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5" style="border: 1px solid red; padding-top:0px">
+    <form method="post">
+    {% if "client" in title %}
+        <div class="mb-3">
+            <label for="client_name" class="form-label">Name</label>
+            <input type="string" class="form-control" id="client_name" name="client_name" value="{{ info.name }}">
+        </div>
+        <div class="mb-3">
+            <label for="passport" class="form-label">Passport</label>
+            <input type="string" class="form-control" id="passport" name="passport"  value="{{ info.passport }}">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone number</label>
+            <input type="string" class="form-control" id="phone" name="phone"  value="{{ info.phone }}">
+        </div>
+        <div class="mb-3">
+            <label for="address " class="form-label">Address</label>
+            <input type="string" class="form-control" id="address " name="address"  value="{{ info.address }}">
+        </div>
+    {% endif %}
+
+    {% if "tarif" in title %}
+        <div class="mb-3">
+            <label for="tarif_name" class="form-label">Name</label>
+            <input type="string" class="form-control" id="tarif_name" name="tarif_name" value="{{ info.name }}">
+        </div>
+        <div class="mb-3">
+            <label for="tarif_price" class="form-label">Price</label>
+            <input type="integer" class="form-control" id="tarif_price" name="tarif_price" value="{{ info.price }}">
+        </div>
+    {% endif %}
+
+    {% if "service" in title %}
+        <div class="mb-3">
+            <label for="service_name" class="form-label">Name</label>
+            <input type="string" class="form-control" id="service_name" name="service_name" value="{{ info.name }}">
+        </div>
+        <div class="mb-3">
+            <label for="service_price" class="form-label">Price</label>
+            <input type="integer" class="form-control" id="service_price" name="service_price" value="{{ info.price }}">
+        </div>
+    {% endif %}
+
+    {% if "order" in title %}
+        <div class="mb-3">
+            <label for="order_client_id" class="form-label">Client ID</label>
+            <input type="integer" class="form-control" id="order_client_id" name="order_client_id" value="{{ info.client_id }}">
+        </div>
+        <div class="mb-3">
+            <label for="order_tarif_id" class="form-label">Tarif ID</label>
+            <input type="integer" class="form-control" id="order_tarif_id" name="order_tarif_id" value="{{ info.tarif_id }}">
+        </div>
+        <div class="mb-3">
+            <label for="start_reserv" class="form-label">Reservations Start</label>
+            <input type="date" class="form-control" id="start_reserv" name="start_reserv" value="{{ info.start_reserv }}">
+        </div>
+        <div class="mb-3">
+            <label for="ends_reserv" class="form-label">Reservations Ends</label>
+            <input type="date" class="form-control" id="ends_reserv" name="ends_reserv" value="{{ info.ends_reserv }}">
+        </div>
+        <div class="mb-3">
+            <label for="room_id" class="form-label">Room ID</label>
+            <input type="integer" class="form-control" id="room_id" name="room_id" value="{{ info.room_id }}">
+        </div>
+    {% endif %}
+
+    {% if "option" in title %}
+        <div class="mb-3">
+            <label for="option_client_id" class="form-label">Client ID</label>
+            <input type="integer" class="form-control" id="option_client_id" name="option_client_id" value="{{ info.client_id }}">
+        </div>
+        <div class="mb-3">
+            <label for="option_service_id" class="form-label">Service ID</label>
+            <input type="integer" class="form-control" id="option_service_id" name="option_service_id" value="{{ info.service_id }}">
+        </div>
+        <div class="mb-3">
+            <label for="option_date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="option_date" name="option_date" value="{{ info.date }}">
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <input type="string" class="form-control" id="status" name="status" value="{{ info.status }}">
+        </div>
+    {% endif %}
+    
+        <button type="submit" class="btn btn-secondary" style="margin-bottom: 10px;">Update</button>
+        
+    </form>
+</div>
+{% endblock %}

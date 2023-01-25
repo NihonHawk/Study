@@ -1,0 +1,20 @@
+#create-char{
+    width : 40%;
+    padding: 20px;
+    margin : auto;
+}
+
+#create-char input {
+    margin-bottom : 10px;
+}
+
+#inputs #button-input {
+    margin-top : 200px;
+    margin-bottom : 10px;
+    margin : auto;
+    display : block;
+    width : 100%;
+}
+
+
+

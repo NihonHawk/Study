@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Character - {{ character[0] }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <h1>{{ character[0] }} - {{ character[1] }}* - {{ character[2] }}</h1>
+    <div class="alert alert-info">
+        <p>Оружие : {{ character[3] }}</p>
+        <p>Регион : {{ character[5] }}</p>
+        <p>Биография :</p>
+        <p>{{ character[6] }}</p>
+        <p>Созвездие : {{ character[7] }}</p>
+        <p>Группа : {{ character[8] }}</p>
+        <p>Дата рождения : {{ character[9] }}</p>
+    </div>
+    <a href="/characters/{{ character[0] }}/del" class="btn btn-danger">Удалить</a>
+    <a href="/characters/{{ character[0] }}/update" class="btn btn-warning">Обновить</a>
+
+</div>
+{% endblock %}
+

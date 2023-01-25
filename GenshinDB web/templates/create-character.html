@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}
+Create-character
+{% endblock %}
+
+{% block body %}
+
+<div class="container" id="create-char">
+
+    <h1 style="text-align:center; margin-bottom: 20px">Создание записи персонажа</h1>
+    <form method="post" id="inputs">
+
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Имя">
+            </div>
+            <div class="col-sm-6">
+                <input type="text" id="weapon" name="weapon" class="form-control" placeholder="Оружие">
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-sm">
+                <label for="region">Регион</label>
+                <select id="region" name="region" class="form-select">
+                <option selected>Мондштадт</option>
+                <option>Ли Юэ</option>
+                <option>Инадзума</option>
+                </select>
+            </div>
+            <div class="col-sm">
+                <label for="gender">Пол</label>
+                <select id="gender" name="gender" class="form-select">
+                <option selected>М</option>
+                <option>Ж</option>
+                </select>
+            </div>
+            <div class="col-sm">
+                <label for="rarity">Ранг</label>
+                <select id="rarity" name="rarity" class="form-select">
+                <option>4</option>
+                <option>5</option>
+                </select>
+            </div>
+
+            <div class="col-sm">
+                <label for="element">Элемент</label>
+                <select id="element" name="element" class="form-select">
+                <option>Пиро</option>
+                <option>Гидро</option>
+                <option>Крио</option>
+                <option>Анемо</option>
+                <option>Электро</option>
+                <option>Гео</option>
+                </select>
+            </div>
+        </div>
+
+        <textarea type="text" id="bio" name="bio" style="margin-top:20px;margin-bottom:10px" class="form-control" placeholder="Описание"></textarea>
+
+        <div class="row g-3">
+            <div class="col-sm">
+                <input type="text" id="const" name="const" class="form-control" placeholder="Созвездие">
+            </div>
+            <div class="col-sm">
+                <input type="text" id="group" name="group" class="form-control" placeholder="Группа">
+            </div>
+            <div class="col-sm">
+                <input type="text" id="birth" name="birth" class="form-control" placeholder="Дата рождения">
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Добавить" id="button-input">
+
+    </form>
+
+</div>
+
+{% endblock %}

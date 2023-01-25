@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Reader ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Card</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for reader in readers %}
+        <tr>
+          <td>{{ reader.id }}</td>
+          <td><a href="/info/reader/{{ reader.id }}">{{ reader.name }}</a></td>
+          <td>{{ reader.phone }}</td>
+          <td>{{ reader.card }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <a href="/form/reader" type="input" class="btn btn-primary">Create</a>
+
+{% endblock %}

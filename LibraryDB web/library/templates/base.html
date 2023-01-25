@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          
+          {% if "Books" in title %}
+          <li class="nav-item">
+            <a href="{{url_for('books')}}" class="nav-link px-2 text-secondary" >
+              Книги
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{{url_for('books')}}" class="nav-link px-2 text-white" >
+              Книги
+            </a>
+          </li>
+          {% endif %}
+
+          {% if "Readers" in title %}
+          <li class="nav-item">
+            <a href="{{url_for('readers')}}" class="nav-link px-2 text-secondary" >
+              Читатели
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{{url_for('readers')}}" class="nav-link px-2 text-white" >
+              Читатели
+            </a>
+          </li>
+          {% endif %}
+          
+          {% if "Orders" in title %}
+          <li class="nav-item">
+            <a href="{{url_for('orders')}}" class="nav-link px-2 text-secondary" >
+              Выдано
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{{url_for('orders')}}" class="nav-link px-2 text-white" >
+              Выдано
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+
+        <div class="text-end">
+          <button type="button" onclick="window.location.href = 'logout'" class="btn btn-outline-light me-2">Выход</button>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+    </header>
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+  </body>
+</html>

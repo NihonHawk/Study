@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+Materials
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+<!--    <h1>Материалы</h1>-->
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr class="align-middle" style="text-align:center">
+                <td>Название</td>
+                <td>Тип</td>
+                <td>Описание</td>
+                <td>Получение</td>
+                <td>Редкость</td>
+            </tr>
+        </thead>
+
+    {% for el in materials %}
+        <tr class="align-middle">
+            <td><a href="/materials/{{ el[0] }}" style="text-decoration: none">{{ el[0] }}</a></td>
+            <td>{{ el[1] }}</td>
+            <td>{{ el[2] }}</td>
+            <td>{{ el[3] }}</td>
+            <td style="text-align:center">{{ el[4] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
+
+

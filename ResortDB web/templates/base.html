@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="sidenav">
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+        <a href="{{ url_for('clients') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-4"><use xlink:href="/">Курорт</use></span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+
+          {% if "Clients" in title %}
+          <li class="nav-item">
+            <a href="{{ url_for('clients') }}" class="nav-link active" >
+              Клиенты
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{{ url_for('clients') }}" class="nav-link text-white" >
+              Клиенты
+            </a>
+          </li>
+          {% endif %}
+
+          {% if "Tarifs" in title %}
+          <li>
+            <a href="{{ url_for('tarifs') }}" class="nav-link active">
+              Тарифы
+            </a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{{ url_for('tarifs') }}" class="nav-link text-white">
+              Тарифы
+            </a>
+          </li>
+          {% endif %}
+
+          {% if "Services" in title %}
+          <li>
+            <a href="{{ url_for('services') }}" class="nav-link active">
+              Услуги
+            </a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{{ url_for('services') }}" class="nav-link text-white">
+              Услуги
+            </a>
+          </li>
+          {% endif %}
+
+          {% if "Orders" in title %}
+          <li>
+            <a href="{{ url_for('orders') }}" class="nav-link active">
+              Заказы
+            </a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{{ url_for('orders') }}" class="nav-link text-white">
+              Заказы
+            </a>
+          </li>
+          {% endif %}
+
+          {% if "Options" in title %}
+          <li>
+            <a href="{{ url_for('options') }}" class="nav-link active">
+              Опции
+            </a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{{ url_for('options') }}" class="nav-link text-white">
+              Опции
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+        <hr>
+      </div>
+    </div>
+    
+    <div class="main">
+      <div class="container">
+        <h1>{{ title }}</h1>
+        <hr>
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    
+
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

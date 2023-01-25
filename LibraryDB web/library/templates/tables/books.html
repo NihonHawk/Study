@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Категория</th>
+        <th>Автор</th>
+        <th>Издано</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {% for book in books %}
+        <tr>
+          <td>{{ book.id }}</td>
+          <td>
+              <a href="/info/book/{{ book.id }}">{{ book.name }}</a>
+          </td>
+          <td>{{ book.category }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.year }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+
+  <a href="/form/book" type="input" class="btn btn-primary">Create</a>
+
+{% endblock %}

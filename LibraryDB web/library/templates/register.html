@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5"  style="text-align:center; margin-left:auto; margin-right:auto">
+    <form method="POST">
+    <h1>Регистрация</h1>
+        <input type="text" name="login" class="form-control" placeholder="Login" style="display: unset; width: 30%;"><br>
+        <input type="text" name="password" class="form-control" placeholder="Password" style="display: unset; width: 30%;"><br>
+        <input type="submit" class="btn btn-success" value="Создать пользователя">        
+    </form>
+</div>
+{% endblock %}

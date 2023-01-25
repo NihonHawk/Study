@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Weapon - {{ weapon[0] }}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <h1>{{ weapon[0] }} - {{ weapon[2] }}*</h1>
+    <div class="alert alert-info">
+        <p>Тип : {{ weapon[1] }}</p>
+        <p>Атака : {{ weapon[3] }}</p>
+        <p>Доп стат : {{ weapon[4] }} - {{ weapon[5] }}</p>
+        <p>Описание :</p>
+        <p style="text-align:justify">{{ weapon[6] }}</p>
+    </div>
+    <a href="/weapons/{{ weapon[0] }}/del" class="btn btn-danger">Удалить</a>
+    <a href="/weapons/{{ weapon[0] }}/update" class="btn btn-warning">Обновить</a>
+</div>
+{% endblock %}
+

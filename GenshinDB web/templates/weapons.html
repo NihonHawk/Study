@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+Weapons
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+<!--    <h1>Оружие</h1>-->
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr class="align-middle" style="text-align:center">
+                <td>Название</td>
+                <td>Тип</td>
+                <td>Редкость</td>
+                <td>Атака</td>
+                <td>Доп стат</td>
+                <td>Значение</td>
+                <td>Способность</td>
+            </tr>
+        </thead>
+
+    {% for el in weapons %}
+        <tr class="align-middle">
+            <td><a href="/weapons/{{ el[0] }}" style="text-decoration: none">{{ el[0] }}</a></td>
+            <td>{{ el[1] }}</td>
+            <td style="text-align:center">{{ el[2] }}</td>
+            <td style="text-align:center">{{ el[3] }}</td>
+            <td>{{ el[4] }}</td>
+            <td style="text-align:center">{{ el[5] }}</td>
+            <td>{{ el[6] }}</td>
+
+        </tr>
+    {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+Characters
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+<!--    <h1>Персонажи</h1>-->
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr class="align-middle" style="text-align:center">
+                <td>Имя</td>
+                <td>Ранг</td>
+                <td>Элемент</td>
+                <td>Оружие</td>
+                <td>Пол</td>
+                <td>Регион</td>
+                <td>Описание</td>
+                <td>Созвездие</td>
+                <td>Группа</td>
+                <td>День рождения</td>
+            </tr>
+        </thead>
+
+    {% for el in characters %}
+        <tr class="align-middle">
+            <td><a href="/characters/{{ el[0] }}" style="text-decoration: none">{{ el[0] }}</a></td>
+            <td style="text-align:center">{{ el[1] }}</td>
+            <td>{{ el[2] }}</td>
+            <td>{{ el[3] }}</td>
+            <td style="text-align:center">{{ el[4] }}</td>
+            <td>{{ el[5] }}</td>
+            <td>{{ el[6] }}</td>
+            <td>{{ el[7] }}</td>
+            <td>{{ el[8] }}</td>
+            <td style="text-align:center">{{ el[9] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+</div>
+{% endblock %}
+

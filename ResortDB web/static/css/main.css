@@ -1,0 +1,25 @@
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #212529   ;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-left: 0px;
+}
+
+.edit-th{
+    width: 15px;
+}
+
+.main {
+    margin-left: 200px; /* То же, что и ширина боковой навигации */
+    padding: 0px 10px;
+}
+
+.container{
+    padding-top: 50px;
+}

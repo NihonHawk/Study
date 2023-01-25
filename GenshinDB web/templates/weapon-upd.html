@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+Update-weapon
+{% endblock %}
+{% block body %}
+<div class="container" id="create-char">
+
+    <h1 style="text-align:center; margin-bottom: 20px">Обновление записи оружия</h1>
+    <form method="post" id="inputs">
+
+        <div class="col-md">
+            <input type="text" id="name" name="name" class="form-control" value="{{weapon[0]}}" placeholder="Название">
+        </div>
+        <div class="row g-3">
+            <div class="col-md">
+                <label>Тип</label>
+                <select id="weapon" name="weapon" class="form-select">
+                    <option selected>{{weapon[1]}}</option>
+                    <option>Одноручное</option>
+                    <option>Двуручное</option>
+                    <option>Древковое</option>
+                    <option>Стрелковое</option>
+                    <option>Катализатор</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>Редкость</label>
+                <select id="rarity" name="rarity" class="form-select">
+                    <option selected>{{weapon[2]}}</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+        <div class="row g-3" style="margin-top : 5px">
+            <div class="col-sm">
+                <input type="text" id="attack" name="attack" value="{{weapon[3]}}"  class="form-control" placeholder="Атака">
+            </div>
+            <div class="col-sm">
+                <input type="text" id="param" name="param" class="form-control" value="{{weapon[4]}}"  placeholder="Доп стат">
+            </div>
+            <div class="col-sm">
+                <input type="text" id="value" name="value" class="form-control" value="{{weapon[5]}}"  placeholder="Значение">
+            </div>
+        </div>
+
+        <textarea type="text" style="margin-top:5px" id="disc" name="disc" class="form-control" placeholder="Описание">{{weapon[6]}}</textarea>
+
+        <input type="submit" class="btn btn-primary" value="Обновить" id="button-input" style="margin-top:10px">
+
+    </form>
+
+</div>
+{% endblock %}

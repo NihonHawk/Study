@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5" >
+    <form method="post">
+    {% if "book" in title %}
+    <h1>Добавить книгу</h1>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Название книги" value="{{info.name}}">
+        <input type="text" id="category" name="category" class="form-control" placeholder="Категория" value="{{info.category}}">
+        <input type="text" id="author" name="author" class="form-control" placeholder="Автор" value="{{info.author}}">
+        <input type="int" id="year" name="year" class="form-control" placeholder="Год" value="{{info.year}}">
+    {% endif %}
+
+    {% if "reader" in title %}
+    <h1>Добавить читателя</h1>
+        <input type="text" id="name" name="name" class="form-control" placeholder="ФИО" value="{{info.name}}">
+        <input type="int" id="phone" name="phone"  class="form-control" placeholder="Телефон" value="{{info.phone}}">
+        <input type="int" id="card"  name="card" class="form-control" placeholder="Билет" value="{{info.card}}">
+    {% endif %}
+
+    {% if "order" in title %}
+    <h1>Выдать книгу</h1>
+        <input type="date" id="date1" name="date1" class="form-control" placeholder="Дата выдачи" value="{{info.first_date}}">
+        <input type="date" id="date2"  name="date2" class="form-control" placeholder="Дата сдачи" value="{{info.second_date}}">
+        <input type="int" id="idbook" name="idbook" class="form-control" placeholder="ID книги" value="{{info.book_id}}">
+        <input type="int" id="idreader" name="idreader" class="form-control" placeholder="ID читателя" value="{{info.reader_id}}">
+    {% endif %}
+
+    <input type="submit" class="btn btn-success" value="Обновить">        
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,1 @@
+wevb: gunicorn main:app

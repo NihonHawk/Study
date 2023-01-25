@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Create-material
+{% endblock %}
+
+{% block body %}
+<div class="container" id="create-char">
+
+    <h1 style="text-align:center; margin-bottom: 20px">Создание записи материала</h1>
+    <form method="post" id="inputs">
+
+        <div class="row g-3">
+            <div class="col-md">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Название">
+            </div>
+            <div class="col-sm-2">
+                <input type="text" id="rarity" name="rarity" class="form-control" placeholder="Редкость">
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-sm">
+                <input type="text" id="type" name="type" class="form-control" placeholder="Тип">
+            </div>
+            <div class="col-sm">
+                <input type="text" id="obtain" name="obtain" class="form-control" placeholder="Получение">
+            </div>
+        </div>
+
+        <textarea type="text" id="disc" name="disc" class="form-control" placeholder="Описание"></textarea>
+
+        <input type="submit" class="btn btn-primary" value="Добавить" id="button-input" style="margin-top:10px">
+
+    </form>
+
+</div>
+
+
+{% endblock %}

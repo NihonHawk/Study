@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <table class="table" id="info">
+        <tbody>
+    {% if "Book" in title %}
+    <tr>
+        <td>Name</td>
+        <td>{{ info.name }}</td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td>{{ info.category }}</td>
+    </tr>
+    <tr>
+        <td>Author</td>
+        <td>{{ info.author }}</td>
+    </tr>
+    <tr>
+        <td>Published</td>
+        <td>{{ info.year }}</td>
+    </tr>
+    {% endif %}
+
+    {% if "Reader" in title %}
+
+        <td>Reader</td>
+        <td>{{ info.name }}</td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td>{{ info.phone }}</td>
+    </tr>
+    <tr>
+        <td>Card</td>
+        <td>{{ info.card }}</td>
+    </tr>
+    {% endif %}
+
+    {% if "Order" in title %}
+    <tr>
+        <td>Order ID</td>
+        <td>{{ info.id }}</td>
+    </tr>
+    <tr>
+        <td>First Date</td>
+        <td>{{ info.first_date }}</td>
+    </tr>
+    <tr>
+        <td>Second Date</td>
+        <td>{{ info.second_date }}</td>
+    </tr>
+    <tr>
+        <td>Book ID</td>
+        <td>{{ info.book_id }}</td>
+    </tr>
+    <tr>
+        <td>Reader ID</td>
+        <td>{{ info.reader_id }}</td>
+    </tr>
+    {% endif %}
+        </tbody>
+    </table>
+    <div style="padding-bottom: 5px">
+        <a href="/delete/{{ info.__class__.__name__.lower() }}/{{ info.id }}" class="btn btn-secondary">Delete</a>
+        <a href="/update/{{ info.__class__.__name__.lower() }}/{{ info.id }}" class="btn btn-secondary">Update</a>
+    </div>
+</div>
+{% endblock %}
+

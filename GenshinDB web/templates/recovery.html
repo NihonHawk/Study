@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+Recovery
+{% endblock %}
+
+{% block body %}
+<form method="post">
+<div class="d-grid gap-2 col-2 mx-auto" style="padding-top:50px; margin: 0 auto;">
+    <h1 style="text-align:center">Recovery</h1>
+    <input type="submit" class="btn btn-primary btn-lg" value="Create" id="button-create" name="submit_button">
+    <input type="submit" class="btn btn-primary btn-lg" value="Restore" id="button-restore" name="submit_button">
+</div>
+    </form>
+{% endblock %}
